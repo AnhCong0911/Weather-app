@@ -63,7 +63,6 @@ public class WeatherFragment extends Fragment {
             CityName mCityName = (CityName) mReceiveBundle.get("data_key");
             if (mCityName != null) {
                 // Process UI layout in here
-                Log.d("CITY_NAME: ", mCityName.getCityName());
                 PBLoading.setVisibility(View.VISIBLE);
                 RLHome.setVisibility(View.GONE);
                 getCurrentWeatherInfo(mCityName.getCityName());
@@ -86,7 +85,7 @@ public class WeatherFragment extends Fragment {
     }
 
     public void getCurrentWeatherInfo(String cityName) {
-        String url = "https://api.openweathermap.org/data/2.5/weather?q=Hà Nội&appid=c71c878f3ebbf0bea3e1b814098c43c5&units=metric";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=c71c878f3ebbf0bea3e1b814098c43c5&units=metric";
 
         cityNameTV.setText(cityName);
 
@@ -127,7 +126,7 @@ public class WeatherFragment extends Fragment {
     }
 
     public void getForecastWeatherInfo(String cityName) {
-        String url = "https://api.openweathermap.org/data/2.5/forecast?q=Hà Nội&appid=c71c878f3ebbf0bea3e1b814098c43c5&units=metric&cnt=24";
+        String url = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=c71c878f3ebbf0bea3e1b814098c43c5&units=metric&cnt=24";
 
 
         RequestQueue mReqQueue = Volley.newRequestQueue(getContext());
