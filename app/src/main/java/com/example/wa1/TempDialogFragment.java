@@ -114,7 +114,7 @@ public class TempDialogFragment extends DialogFragment {
     }
 
     public void getCurrentWeatherInfo(String cityName) {
-        String url = "https://api.openweathermap.org/data/2.5/weather?q=Hà Nội&appid=c71c878f3ebbf0bea3e1b814098c43c5&units=metric";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=c71c878f3ebbf0bea3e1b814098c43c5&units=metric";
 
         cityNameTV.setText(cityName);
 
